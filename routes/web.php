@@ -25,10 +25,19 @@ Route::get('/home', function () {
     return view('web.home');
 });
 
-Route::get('/login', function () {
-    return view('web.auth.login');
-});
 Route::get('/register', function () {
     return view('web.auth.register');
 });
+
+Route::group(['namespace'=>'Auth'], function(){
+    
+    Route::get('/login', 'LoginController@showLoginForm')->name('login');
+    Route::post('/login', 'LoginController@login');
+    Route::get('/logout', 'LogoutController@logout')->name('logout');
+    Route::post('/logout', 'LogoutController@logout');
+
+});
+
+
+
 
