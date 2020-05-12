@@ -14,7 +14,10 @@ class User extends Model
     const UPDATED_AT = 'last_update';
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'dob',
     ];
     //
     protected $hidden = [
