@@ -14,7 +14,7 @@ class AddColumnToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->date('dob')->after('password');
+            $table->date('dob')->nullable()->after('password');
         });
     }
 

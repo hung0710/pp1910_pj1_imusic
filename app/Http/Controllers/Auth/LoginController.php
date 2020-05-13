@@ -50,7 +50,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('web.auth.login');
+        return view('auth.login');
     }
 }
 
