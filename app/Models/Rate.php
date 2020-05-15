@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models;
 class Rate extends Model
 {
     protected $table = 'rates';
@@ -16,12 +16,5 @@ class Rate extends Model
         // a rate belong to a user
         return $this->belongsTo(User::class);
     }
-    public function songs()
-    {
-        return $this->belongsTo(Song::class);
-    }
-
-
-
     //
 }

@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models;
 class Category extends Model
 {
     protected $table = 'categories';
     protected $fillable = [
-        'title','description'
+        'title',
     ];
 
     protected function songs()

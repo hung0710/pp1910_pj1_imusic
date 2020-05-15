@@ -9,7 +9,7 @@ class Singer extends Model
     protected $table = 'singers';
     protected $fillable = [
         'name',
-        'decription',
+        'description',
     ];
 
     public function albums()

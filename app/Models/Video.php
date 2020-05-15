@@ -12,7 +12,7 @@ class Video extends Model
         'singer_id',
         'lyrics',
         'category_id',
-        'decription',
+        'description',
         'status',
         'view',
         'url',

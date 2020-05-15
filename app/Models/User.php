@@ -46,6 +46,6 @@ class User extends Model
 
     public function rates()
     {
-        return $this->hasMany(Rate::class);
+        return $this->hasMany(Rate::class, 'user_id');
     }
 }

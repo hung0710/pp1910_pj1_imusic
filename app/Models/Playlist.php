@@ -3,13 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models;
 class Playlist extends Model
 {
-    protected $table = 'playlist';
+    protected $table = 'playlists';
     protected $fillable = [
         'name',
-        'decription','category_id','type','view',
+        'description',
+        'category_id',
+        'type',
+        'view',
     ];
 
     protected function category()

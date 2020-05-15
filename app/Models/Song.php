@@ -13,7 +13,6 @@ class Song extends Model
         'lyrics',
         'category_id',
         'musician_id',
-        'decription',
         'status',
         'view',
     ];
