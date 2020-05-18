@@ -9,7 +9,7 @@ class Musician extends Model
     protected $table = 'musicians';
     protected $fillable = [
         'name',
-        'decription',
+        'description',
     ];
 
     public function songs()

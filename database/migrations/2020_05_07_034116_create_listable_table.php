@@ -14,9 +14,10 @@ class CreateListableTable extends Migration
     public function up()
     {
         Schema::create('listable', function (Blueprint $table) {
-            $table->id();
-            $table->integer('listable_id');
+            $table->bigInteger('song_id');
+            $table->bigInteger('listable_id');
             $table->string('listable_type');
+            $table->primary(['song_id', 'listable_id', 'listable_type']);
             $table->timestamps();
         });
     }

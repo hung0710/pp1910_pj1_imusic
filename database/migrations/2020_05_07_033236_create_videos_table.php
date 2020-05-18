@@ -20,7 +20,7 @@ class CreateVideosTable extends Migration
             $table->text('lyrics');
             $table->integer('category_id');
             $table->integer('musician_id');
-            $table->string('decription', 255);
+            $table->string('description', 255);
             $table->enum('status',['approved','not approved']);
             $table->integer('view');
             $table->string('url', 255);
