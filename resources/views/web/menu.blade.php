@@ -9,13 +9,14 @@
 	                    <span class="icon-bar"></span>
 	                    <span class="icon-bar"></span>
 	                </button>
-	                <a class="navbar-brand" href="{{ URL::to('/') }}">Music Online</a>
+	                <a class="navbar-brand" href="{{ URL::to('#') }}">Music Online</a>
 	            </div>
+				
 	            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-2">
 	                <ul class="nav navbar-nav">
-	                	<li><a href="{{ URL::to('home') }}">Trang chủ</a></li>
+	                	<li><a href="{{ URL::to('/') }}">Trang chủ</a></li>
 	                    <li class="dropdown">
-	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bài hát<b class="caret"></b></a>
+	                        <a href="{{URL::to('songnew')}}">Bài hát</b></a>
 	                        <ul class="dropdown-menu multi-column columns-2">
 	                            <li>
 	                                <ul class="multi-column-dropdown col-sm-6">
@@ -112,7 +113,7 @@
                             <li><a href="{{ url('/register') }}">Register</a></li> -->
                         @else
                             <li class="dropdown">
-		                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Quản lý<b class="caret"></b></a>
+		                        <a href="{{URL::to('personalpage')}}" >Trang Cá Nhân<b class="caret"></b></a>
 		                        <ul class="dropdown-menu multi-column columns-1">
 		                            <li>
 		                                <ul class="multi-column-dropdown col-sm-8">
@@ -121,6 +122,8 @@
 		                                    <li><a href="{{ URL::to('singers') }}">Ca sĩ</a></li>
 		                                    <li class="divider"></li>
 		                                    <li><a href="{{ URL::to('artists') }}">Nhạc sĩ</a></li>
+											<li class="divider"></li>
+		                                    <li><a href="{{ URL::to('upload') }}">Tải lên</a></li>
 		                                </ul>
 		                            </li>
 		                        </ul>
@@ -131,7 +134,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }} " >Login</a></li>
-                            <li><a href="{{ url('/register') }}" >Register</a></li>
+                            <li><a href="{{ url('/register') }}" >Register</a></li>							
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -145,11 +148,16 @@
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
-
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+									<li>
+									<a href="{{ url('/changepassword') }}">
+                                            ChangePassword
+                                        </a>
+                                        </form>
+									</li>
                                 </ul>
                             </li>
                         @endif
