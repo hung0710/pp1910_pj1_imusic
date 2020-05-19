@@ -12,21 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('web.index');
+Route::get('/', function(){
+	return view('web.index');
 });
 
-Route::get('/admin', function () {
-    return view('admin.index');
-});
+Route::get('/home', 'HomeController@index');
 
-Route::get('/home', function () {
-    return view('web.home');
-});
+Route::resource('/songnew','SongnewController');
 
 Auth::routes();
-
-
+Route::get('/changepassword','Auth\ChangePasswordController@index');
+Route::post('/changepassword','Auth\ChangePasswordController@ChangePassword')->name('changePassword');
 
 

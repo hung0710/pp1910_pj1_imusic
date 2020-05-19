@@ -35,7 +35,7 @@ class ChangePasswordRequest extends FormRequest
             'password.required' => 'Xin mời nhập password',
             'new_password.required' => 'Xin mời nhập mật khẩu mới',
             'new_password.same' => 'Mật khẩu không khớp',
-            'new_password.min' => 'Mật khẩu phải có độ dài nhỏ nhất là 6'
+            'new_password.min' => 'Mật khẩu phải có độ dài nhỏ nhất là 8'
         ];
     }
 }
