@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="template_admin/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="{{url('template_admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -68,14 +68,14 @@
 
   
   <!-- Bootstrap core JavaScript-->
-  <script src="template_admin/vendor/jquery/jquery.min.js"></script>
-  <script src="template_admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{url('template_admin/vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url('template_admin/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="template_admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="{{url('template_admin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="template_admin/js/sb-admin-2.min.js"></script>
+  <script src="{{url('template_admin/js/sb-admin-2.min.js')}}"></script>
 
   <!-- Page level plugins -->
 

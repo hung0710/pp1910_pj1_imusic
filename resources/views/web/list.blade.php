@@ -6,21 +6,21 @@
 	  				<div class="col-md-4">
 	  					<div class="thumbnail">
 	  						<a href="">
-		  						<img src="template_web/img/al1.jpg" alt="album1">
+		  						<img src="{{url('template_web/img/al1.jpg')}}" alt="album1">
 		  					</a>
 	  					</div>
 	  				</div>
 	  				<div class="col-md-4">
 	  					<div class="thumbnail">
 	  						<a href="">
-		  						<img src="template_web/img/al2.jpg" alt="album2">
+		  						<img src="{{url('template_web/img/al2.jpg')}}" alt="album2">
 		  					</a>
 	  					</div>
 	  				</div>
 	  				<div class="col-md-4">
 	  					<div class="thumbnail">
 	  						<a href="">
-		  						<img src="template_web/img/al3.jpg" alt="album3">
+		  						<img src="{{url('template_web/img/al3.jpg')}}" alt="album3">
 		  					</a>
 	  					</div>
 	  				</div>
@@ -32,22 +32,22 @@
 	  				<hr>
 	  				<div class="row" style="margin-bottom: 7px;">
 	  					<a href="">
-	  						<img src="template_web/img/cd1.jpg" alt="" width="90%;" >
+	  						<img src="{{url('template_web/img/cd1.jpg')}}" alt="" width="90%;" >
 	  					</a>
 	  				</div>
 	  				<div class="row" style="margin-bottom: 7px;">
 	  					<a href="">
-	  						<img src="template_web/img/cd2.jpg" alt="" width="90%">
+	  						<img src="{{url('template_web/img/cd2.jpg')}}" alt="" width="90%">
 	  					</a>
 	  				</div>
 	  				<div class="row" style="margin-bottom: 7px;">
 	  					<a href="">
-	  						<img src="template_web/img/cd3.jpg" alt="" width="90%">
+	  						<img src="{{url('template_web/img/cd3.jpg')}}" alt="" width="90%">
 	  					</a>
 	  				</div>
 	  				<div class="row" style="margin-bottom: 7px;">
 	  					<a href="">
-	  						<img src="template_web/img/cd4.jpg" alt="" width="90%">
+	  						<img src="{{url('template_web/img/cd4.jpg')}}" alt="" width="90%">
 	  					</a>
 	  				</div>
 	  			</div>
@@ -60,21 +60,21 @@
 	  				<div class="col-md-4">
 	  					<div class="thumbnail">
 	  						<a href="">
-		  						<img src="template_web/img/mv1.jpg" alt="mv1">
+		  						<img src="{{url('template_web/img/mv1.jpg')}}" alt="mv1">
 		  					</a>
 	  					</div>
 	  				</div>
 	  				<div class="col-md-4">
 	  					<div class="thumbnail">
 	  						<a href="">
-		  						<img src="template_web/img/mv2.jpg" alt="mv2">
+		  						<img src="{{url('template_web/img/mv2.jpg')}}" alt="mv2">
 		  					</a>
 	  					</div>
 	  				</div>
 	  				<div class="col-md-4">
 	  					<div class="thumbnail">
 	  						<a href="">
-		  						<img src="template_web/img/mv3.jpg" alt="mv3">
+		  						<img src="{{url('template_web/img/mv3.jpg')}}" alt="mv3">
 		  					</a>
 	  					</div>
 	  				</div>
@@ -83,21 +83,21 @@
 	  				<div class="col-md-4">
 	  					<div class="thumbnail">
 	  						<a href="">
-		  						<img src="template_web/img/mv4.jpg" alt="mv4">
+		  						<img src="{{url('template_web/img/mv4.jpg')}}" alt="mv4">
 		  					</a>
 	  					</div>
 	  				</div>
 	  				<div class="col-md-4">
 	  					<div class="thumbnail">
 	  						<a href="">
-		  						<img src="template_web/img/mv5.jpg" alt="mv5">
+		  						<img src="{{url('template_web/img/mv5.jpg')}}" alt="mv5">
 		  					</a>
 	  					</div>
 	  				</div>
 	  				<div class="col-md-4">
 	  					<div class="thumbnail">
 	  						<a href="">
-		  						<img src="template_web/img/mv6.jpg" alt="mv6">
+		  						<img src="{{url('template_web/img/mv6.jpg')}}" alt="mv6">
 		  					</a>
 	  					</div>
 	  				</div>

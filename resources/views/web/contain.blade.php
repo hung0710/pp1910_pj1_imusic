@@ -14,19 +14,19 @@
 						  <!-- Wrapper for slides -->
 						  <div class="carousel-inner" role="listbox">
 						    <div class="item active">
-						      <img src="template_web/img/pic1.jpg" alt="city" >
+						      <img src="{{url('template_web/img/pic1.jpg')}}" alt="city" >
 						    </div>
 						    <div class="item">
-						      <img src="template_web/img/pic2.jpg" alt="city2" >
+						      <img src="{{url('template_web/img/pic2.jpg')}}" alt="city2" >
 						    </div>
 						    <div class="item">
-						      <img src="template_web/img/pic3.jpg" alt="city3">
+						      <img src="{{url('template_web/img/pic3.jpg')}}" alt="city3">
 						    </div>
 						    <div class="item">
-						      <img src="template_web/img/pic4.jpg" alt="city4"  >
+						      <img src="{{url('template_web/img/pic4.jpg')}}" alt="city4"  >
 						    </div>
 						    <div class="item">
-						      <img src="template_web/img/pic5.jpg" alt="city5" >
+						      <img src="{{url('template_web/img/pic5.jpg')}}" alt="city5" >
 						    </div>
 						    ...
 						  </div>

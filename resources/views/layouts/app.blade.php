@@ -11,8 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -54,7 +53,7 @@
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -65,6 +64,11 @@
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
+                                        <li>
+                                            <a href="/changePassword">
+                                            Change Password
+                                            </a>
+                                        </li>
 
                                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -82,6 +86,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="templade_web/js/app.js"></script>
+    <script src="{{url('template_web/js/app.js') }}"></script>
 </body>
 </html>
