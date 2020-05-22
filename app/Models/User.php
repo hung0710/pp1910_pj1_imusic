@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models;
-use Illuminate\Contracts\Auth\Authenticatable;
-class User extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
+class User extends Authenticatable
 {
     protected $table = 'users';
     public $timestamps = false;
@@ -19,6 +19,7 @@ class User extends Model
         'email',
         'password',
         'dob',
+        'avatar',
     ];
     //
     protected $hidden = [
@@ -41,7 +42,7 @@ class User extends Model
 
     public function favorite_list()
     {
-        return $this->hasMany(FavoriteList::class);
+        return $this->hasMany(FavouriteList::class);
     }
 
     public function rates()
