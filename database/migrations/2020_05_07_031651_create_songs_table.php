@@ -21,7 +21,7 @@ class CreateSongsTable extends Migration
             $table->integer('category_id');
             $table->integer('musician_id');
             $table->enum('status',['approved','not approved']);
-            $table->integer('view');
+            $table->integer('view')->default(0);
             $table->timestamps();
         });
     }
