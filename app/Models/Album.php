@@ -8,17 +8,12 @@ class Album extends Model
 {
     protected $table = 'albums';
     protected $fillable = [
-        'name','singer_id',
+        'name',
     ];
 
     protected function songs()
     {
         return $this->morphToMany(Song::class, 'lisable');
-    }
-
-    protected function singers()
-    {
-        return $this->belongsTo(Singer::class);
     }
 
     public function images()
