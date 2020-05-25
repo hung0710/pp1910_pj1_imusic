@@ -9,7 +9,7 @@
      <title>Music</title>
 
     <!-- Styles -->
-    <link href="template_web/css/app.css" rel="stylesheet">
+    <link href="{{url('template_web/css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     <script>

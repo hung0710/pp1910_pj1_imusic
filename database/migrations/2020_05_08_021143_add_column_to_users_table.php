@@ -15,6 +15,7 @@ class AddColumnToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->date('dob')->nullable()->after('password');
+            $table->string('avatar')->nullable();
         });
     }
 
@@ -27,6 +28,8 @@ class AddColumnToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
+            $table->dropColumn('dob');
+            $table->dropColumn('avatar');
         });
     }
 }

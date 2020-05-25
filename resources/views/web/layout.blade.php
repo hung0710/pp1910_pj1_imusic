@@ -128,7 +128,7 @@
 	            </div>
 	            <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-2">
 	                <ul class="nav navbar-nav">
-	                	<li><a href="{{ URL::to('home') }}">Trang chủ</a></li>
+	                	<li><a href="{{ URL::to('/') }}">Trang chủ</a></li>
 	                    <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bài hát<b class="caret"></b></a>
 	                        <ul class="dropdown-menu multi-column columns-2">

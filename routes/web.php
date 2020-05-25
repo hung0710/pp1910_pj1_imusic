@@ -16,12 +16,11 @@ Route::get('/', function(){
 	return view('web.index');
 });
 
-Route::get('/home', 'HomeController@index');
-
 Route::resource('/songnew','SongnewController');
 
 Auth::routes();
 Route::get('/changepassword','Auth\ChangePasswordController@index');
 Route::post('/changepassword','Auth\ChangePasswordController@ChangePassword')->name('changePassword');
+
 
 
