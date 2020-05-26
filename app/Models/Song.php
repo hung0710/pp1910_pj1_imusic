@@ -9,11 +9,11 @@ class Song extends Model
     protected $table = 'songs';
     protected $fillable = [
         'name',
-        'singer_id',
+        'singer',
+        'URL',
         'lyrics',
         'category_id',
-        'musician_id',
-        'status',
+        'artists',
         'view',
     ];
 

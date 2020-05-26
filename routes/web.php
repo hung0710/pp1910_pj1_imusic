@@ -22,5 +22,8 @@ Auth::routes();
 Route::get('/changepassword','Auth\ChangePasswordController@index');
 Route::post('/changepassword','Auth\ChangePasswordController@ChangePassword')->name('changePassword');
 
+Route::get('/songs', function(){
+	return view('admin.song.index');
+});
 
 
