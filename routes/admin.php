@@ -18,6 +18,15 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
         Route::get('/{category_id}/delete', 'CategoryController@destroy')->name('delete');
     });
 
+    Route::group(['as' => 'song.', 'prefix' => '/song'], function () {
+        Route::get('/', 'SongController@index')->name('index');
+        Route::get('/create', 'SongController@create')->name('create');
+        Route::post('/create', 'SongController@store');
+        Route::get('/{song_id}/edit', 'SongController@edit')->name('edit');
+        Route::post('/{song_id}/update', 'SongController@update')->name('update');
+        Route::get('/{song_id}/delete', 'SongController@destroy')->name('delete');
+    });
+
     Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/', 'HomeController@index')->name('index');
         Route::get('/index', 'HomeController@index')->name('index');

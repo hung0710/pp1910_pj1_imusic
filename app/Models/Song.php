@@ -9,11 +9,11 @@ class Song extends Model
     protected $table = 'songs';
     protected $fillable = [
         'name',
-        'singer_id',
+        'singer',
+        'url',
         'lyrics',
         'category_id',
-        'musician_id',
-        'status',
+        'artists',
         'view',
     ];
 
@@ -32,11 +32,6 @@ class Song extends Model
         return $this->belongToMany(Category::class);
     }
 
-    public function musicians()
-    {
-        return $this->belongsTo(Musician::class);
-    }
-
     public function albums()
     {
         return $this->morphedByMany(Album::class, 'listable');
@@ -45,17 +40,6 @@ class Song extends Model
     {
         return $this->morphedByMany(FavouriteList::class, 'listable');
     }
-    public function playlist()
-    {
-        return $this->morphedByMany(Playlist::class, 'listable');
-    }
 
-    public function singers()
-    {
-        return $this->morphedByMany(Image::class, 'listable');
-    }
-
-    
-    
     //
 }

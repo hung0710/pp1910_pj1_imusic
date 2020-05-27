@@ -17,7 +17,7 @@ class CreateSongsTable extends Migration
             $table->id();
             $table->string('name', 50);
             $table->integer('singer_id');
-            $table->text('lyrics');
+            $table->text('lyrics')->nullable();
             $table->integer('category_id');
             $table->integer('musician_id');
             $table->enum('status',['approved','not approved']);
