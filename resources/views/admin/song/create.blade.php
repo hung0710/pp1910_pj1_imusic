@@ -15,6 +15,7 @@
 @endif
 <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post" action="{{route('admin.song.create')}}" enctype="multipart/form-data">
     @csrf
+    {{-- name --}}
     <div class="form-group">
         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name<span class="required">*</span></label>
         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -26,54 +27,69 @@
             </span>
         @endif
     </div>
+    {{-- url --}}
     <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12">Song</label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-12">URL</label>
         <div class="input-group col-lg-6 col-md-9 col-sm-12">
-            <input class="song_file" type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon01" name="song" id="song">
+            <input class="url" type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon01" name="url" id="url">
         </div>
-        @if ($errors->has('song'))
+        @if ($errors->has('url'))
             <span class="help-block">
-                <strong>{{ $errors->first('song') }}</strong>
+                <strong>{{ $errors->first('url') }}</strong>
             </span>
         @endif
     </div>
+    {{-- singer --}}
     <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Singer<span class="required">*</span></label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="singer">Singer <span class="required">*</span></label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-            <input type="text" name="Singer" required="required" class="form-control col-md-7 col-xs-12">
+            <input type="text" name="singer" required="required" class="form-control col-md-7 col-xs-12">
         </div>
-        @if ($errors->has('Singer'))
+        @if ($errors->has('singer'))
             <span class="help-block">
-                <strong>{{ $errors->first('Singer') }}</strong>
+                <strong>{{ $errors->first('singer') }}</strong>
             </span>
         @endif
     </div>
+    {{-- artists --}}
     <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Artists<span class="required">*</span></label>
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="artists">Artists <span class="required">*</span></label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-            <input type="text" name="Artists" required="required" class="form-control col-md-7 col-xs-12">
+            <input type="text" name="artists" required="required" class="form-control col-md-7 col-xs-12">
         </div>
-        @if ($errors->has('Artists'))
+        @if ($errors->has('artists'))
             <span class="help-block">
-                <strong>{{ $errors->first('Artists') }}</strong>
+                <strong>{{ $errors->first('artists') }}</strong>
             </span>
         @endif
     </div>
+    {{-- category_id --}}
     <div class="form-group">
-        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">Lyrics <span class="required">*</span></label>
+        <label for="select_categories" class="control-label col-md-3 col-sm-3 col-xs-12">Category</label>
+        <select class="form-control col-md-7 col-xs-12" id="select_categories" name="category_id">
+            @foreach ($categories as $category)
+            <option  value="{{$category->id}}" @if ($category->id == old('category_id')) selected @endif>{{$category->title}}</option>
+            @endforeach
+        </select>
+        @if ($errors->has('category_id'))
+        <span class="help-block text-danger"><strong>{{ $errors->first('category_id') }}</strong></span>
+        @endif
+    </div>
+    {{-- lyrics --}}
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="lyrics">Lyrics <span class="required">*</span></label>
         <div class="col-md-6 col-sm-6 col-xs-12">
-            <textarea name="Lyrics" required="required" class="form-control col-md-7 col-xs-12" name="Lyrics"></textarea>
+            <textarea name="lyrics" required="required" class="form-control col-md-7 col-xs-12" name="lyrics"></textarea>
         </div>
-        @if ($errors->has('Lyrics'))
+        @if ($errors->has('lyrics'))
             <span class="help-block">
-                <strong>{{ $errors->first('Lyrics') }}</strong>
+                <strong>{{ $errors->first('lyrics') }}</strong>
             </span>
         @endif
     </div>
     <div class="ln_solid"></div>
     <div class="form-group">
         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-            <button class="btn btn-primary" type="button">Cancel</button>
             <button class="btn btn-primary" type="reset">Reset</button>
             <button type="submit" class="btn btn-success">Submit</button>
         </div>

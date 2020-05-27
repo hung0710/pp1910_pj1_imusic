@@ -25,10 +25,13 @@ class UpdateTableTable extends Migration
             $table->dropColumn('singer_id');
         });
         Schema::table('songs', function ($table) {
-            $table->renameColumn('musician_id', 'artists');
+            $table->dropColumn('musician_id');
             $table->dropColumn('status');
-            $table->renameColumn('singer_id', 'singer');
-            $table->string('URL')->after('name');
+            $table->dropColumn('singer_id');
+            $table->string('url')->after('name');
+            $table->string('singer')->after('url');
+            $table->string('artists')->after('category_id');
+
         });
         //
     }

@@ -1,51 +1,63 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Song;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Song;
 use App\Http\Requests\SongFormRequest;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Repositories\Contracts\SongInterface;
+use App\Repositories\Eloquent\SongRepository;
+use App\Services\SongService;
 
 class SongController extends Controller
 {
-    public function index(){
-        $songs = Song::all();
+
+    protected $SongRepository;
+    protected $SongService;
+
+    public function __construct(SongInterface $SongRepository, SongService $SongService)
+    {
+        $this->SongRepository = $SongRepository;
+        $this->SongService = $SongService;
+
+    }
+
+    public function index()
+    {
+        $songs = $this->SongRepository->getAll();
         return view('admin.song.index', compact('songs'));
     }
 
     public function create()
     {
-        return view('admin.song.create');
+        $categories = Category::all();
+        return view('admin.song.create', compact('categories') );
     }
 
-    public function store(SongFormRequest $Request)
+    public function store(SongFormRequest $request)
     {
-        Song::create(['name' => $Request->get('name')]);
+        $this->SongService->create($request);
         return redirect('/admin/songs')->with("success","Create Product Successfully !");
     }
 
-    
-    public function edit(Request $request)
+    public function edit($id)
     {
-        $album = Song::find($request->song_id);
-        return view('admin.album.edit', compact('song'));
+        $categories = Category::all();
+        $song = $this->SongRepository->find($id);
+        return view('admin.song.edit', compact('song','categories',));
     }
 
     public function update(Request $request, $id)
     {
-        $album = Song::whereid($id)->firstOrFail();
-        $album->name = $request->get('name');
-        $album->save();
-
+        $this->SongService->update($request, $id);
         return redirect('/admin/songs');
     }    
 
-    
     public function destroy($id)
     {
-        $album = Song::whereid($id)->firstOrFail();
-        $album->delete();
+        $this->SongRepository->delete($id);
         return redirect('admin/songs')->with('status', 'The ticket '.$id.' has been deleted!');
     }
 }

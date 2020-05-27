@@ -34,14 +34,14 @@ class AlbumController extends Controller
     public function store(AlbumFormRequest $request)
     {
         $data = $request->all();
-        $this->AlbumRepository->create($data);;
+        $this->AlbumRepository->create($data);
         return redirect('/admin/albums')->with("success","Create Product Successfully !");
     }
 
 
-    public function edit(Request $request)
+    public function edit($id)
     {
-        $album = Album::find($request->album_id);
+        $album = $this->AlbumRepository->find($id);
         return view('admin.album.edit', compact('album'));
     }
 

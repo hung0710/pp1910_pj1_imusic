@@ -10,7 +10,7 @@ class Song extends Model
     protected $fillable = [
         'name',
         'singer',
-        'URL',
+        'url',
         'lyrics',
         'category_id',
         'artists',
