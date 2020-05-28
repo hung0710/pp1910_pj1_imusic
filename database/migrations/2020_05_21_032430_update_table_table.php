@@ -15,9 +15,9 @@ class UpdateTableTable extends Migration
     {	
         Schema::rename('musicians','artistses');
         Schema::table('artistses', function (Blueprint $table) {
-            $table->string('avatar');
+            $table->string('url');
             $table->dropColumn('description');
-            $table->text('infomation');
+            $table->text('information');
         });
         Schema::table('albums', function (Blueprint $table) {
             $table->string('image');

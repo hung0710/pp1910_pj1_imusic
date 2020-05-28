@@ -9,15 +9,13 @@ class Artists extends Model
     protected $table = 'artistses';
     protected $fillable = [
         'name',
-        'dob',
-        'infomation',
-        'avatar'
+        'url',
+        'information',
     ];
 
     public function songs()
     {
         return $this->morphToMany(Song::class, 'listable');
     }
-
     //
 }
