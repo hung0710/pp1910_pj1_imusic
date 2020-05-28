@@ -16,13 +16,12 @@ Route::get('/', function(){
 	return view('web.index');
 });
 
+Route::resource('/songnew','SongnewController');
+
 Route::group(['namespace' => 'Auth'], function () {
-    Route::get('/register', 'RegisterController@show')->name('register');;
-    Route::post('/register', 'RegisterController@register');
-    Route::get('/login', 'LoginController@showLoginForm')->name('login');
-    Route::post('/login', 'LoginController@login');
-    Route::get('/logout', 'LogoutController@logout')->name('logout');
+    Route::get('register', 'RegisterController@show')->name('register');;
+    Route::post('register', 'RegisterController@register');
+    Route::get('login', 'LoginController@showLoginForm')->name('login');
+    Route::post('login', 'LoginController@login');
+    Route::get('logout', 'LogoutController@logout')->name('logout');
 });
-
-
-
