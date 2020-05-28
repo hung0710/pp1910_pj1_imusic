@@ -21,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Contracts\SongInterface::class,
             \App\Repositories\Eloquent\SongRepository::class,
         );
+        $this->app->singleton(
+            \App\Repositories\Contracts\ArtistsInterface::class,
+            \App\Repositories\Eloquent\ArtistsRepository::class,
+        );
         //
     }
 

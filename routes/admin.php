@@ -27,6 +27,15 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
         Route::get('/{song_id}/delete', 'SongController@destroy')->name('delete');
     });
 
+    Route::group(['as' => 'artists.', 'prefix' => '/artists'], function () {
+        Route::get('/', 'ArtistsController@index')->name('index');
+        Route::get('/create', 'ArtistsController@create')->name('create');
+        Route::post('/create', 'ArtistsController@store');
+        Route::get('/{artists_id}/edit', 'ArtistsController@edit')->name('edit');
+        Route::post('/{artists_id}/update', 'ArtistsController@update')->name('update');
+        Route::get('/{artists_id}/delete', 'ArtistsController@destroy')->name('delete');
+    });
+
     Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/', 'HomeController@index')->name('index');
         Route::get('/index', 'HomeController@index')->name('index');
