@@ -13,11 +13,11 @@ class UpdateTableTable extends Migration
      */
     public function up()
     {	
-        Schema::rename('musicians','artists');
-        Schema::table('artists', function (Blueprint $table) {
+        Schema::rename('musicians','artistses');
+        Schema::table('artistses', function (Blueprint $table) {
             $table->string('avatar');
-            $table->string('birthday');
-            $table->string('country');
+            $table->dropColumn('description');
+            $table->text('infomation');
         });
         Schema::table('albums', function (Blueprint $table) {
             $table->string('image');
@@ -27,7 +27,11 @@ class UpdateTableTable extends Migration
             $table->dropColumn('musician_id');
             $table->dropColumn('status');
             $table->dropColumn('singer_id');
+            $table->string('url')->after('name');
+            $table->string('singer')->after('url')->nullable();
+            $table->string('artists')->after('category_id');
         });
+        Schema::drop('singers');
         //
     }
 

@@ -42,8 +42,8 @@
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Custom Components:</h6>
-      <a class="collapse-item" href="#">Songs</a>
-      <a class="collapse-item" href="#">PlayLists</a>
+      <a class="collapse-item" href="{{route('admin.song.index')}}">Songs</a>
+      <a class="collapse-item" href="{{route('admin.category.index')}}">Categories</a>
       <a class="collapse-item" href="#">Albums</a>
 
     </div>

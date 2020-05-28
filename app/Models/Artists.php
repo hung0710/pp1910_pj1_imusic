@@ -4,17 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models;
-class Musician extends Model
+class Artists extends Model
 {
-    protected $table = 'musicians';
+    protected $table = 'artistses';
     protected $fillable = [
         'name',
-        'description',
+        'dob',
+        'infomation',
+        'avatar'
     ];
 
     public function songs()
     {
-        return $this->hasMany(Song::class);
+        return $this->morphToMany(Song::class, 'listable');
     }
 
     //
