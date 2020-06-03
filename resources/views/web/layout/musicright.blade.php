@@ -39,5 +39,5 @@
         </div>
     </div>
     <!-- script for play-list -->
-    <link href="template_web/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css">
+    <link href="{{url('template_web/css/jplayer.blue.monday.min.css')}}" rel="stylesheet" type="text/css">
 </div>

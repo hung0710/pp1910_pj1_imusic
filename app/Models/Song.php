@@ -29,7 +29,7 @@ class Song extends Model
 
     public function category()
     {
-        return $this->belongToMany(Category::class);
+        return $this->hasOne(Category::class);
     }
 
     public function albums()

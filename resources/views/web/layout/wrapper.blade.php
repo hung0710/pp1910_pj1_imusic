@@ -103,7 +103,7 @@
                 });
             });
         </script> -->
-        <script type="text/javascript" src="template_web/js/jquery.flexisel.js"></script>	
+        <script type="text/javascript" src="{{url('template_web/js/jquery.flexisel.js')}}"></script>	
     </div>
 </div>
 <div class="clearfix"></div>

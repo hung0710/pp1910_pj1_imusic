@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Validator;
@@ -19,14 +20,14 @@ class SongnewController extends Controller
      */
     public function index()
     {
-       $input = Song::orderBy('id','desc')->paginate(20);
+       $input = Song::orderBy('id','desc')->paginate(10);
        return view('web.songnew.index')->with('v_song', $input);
     }
 
     public function show($id)
     {
         $data = Song::findOrFail($id);
-        $input = Song::orderBy('id','desc')->paginate(20); 
+        $input = Song::orderBy('id','desc')->paginate(5); 
         return view('web.songnew.show')->with([
             'v_music' => $data,
             'v_track' => $input,
