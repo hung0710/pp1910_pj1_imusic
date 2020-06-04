@@ -1,51 +1,30 @@
 @extends('web.layout.app')
+
 @section('content')
-<div class="widget-side">
-    <h4 class="widget-title">List Songs</h4>
-    <div class="col-md-6 col-md-offset-2">
-        <ul>
-            <li>
-                <div class="song-img">
-                    <a href="single.html"><img src="template_web/images/play1.png" class="img-responsive" alt="" /></a>
+<div class="member-entry info">
+    <div class="member-details">
+        <a href="#" class="member-img">
+            <img style="width: 10%" src="{{$artistses->url }}" class="img-rounded" alt=" ">
+        </a>
+        <h4>
+            <a href="{{route('artists.songs', ['artists_id' => $artistses->id])}}" class="name"><p>Name: {{$artistses->name}}</p></a>
+        </h4>
+        <div class="singer_profile" style="margin-bottom: 0px; overflow: hidden; height: auto;">
+            <div class="fram_select">
+                <div class="tile_box_key">
+                    <h2><a title="Tiểu sử">Tiểu sử</a></h2>
                 </div>
-                <div class="song-text">
-                    <a href="single.html">Ellie-Goulding</a>
-                    <span class="post-date">Feb 13, 2016</span>
+                <div class="singer_profile_content">
+                    <div class="row info-list">
+                        <div class="col-lg-10">
+                            <p>Information: {{$artistses->information}}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="clearfix"></div>
-            </li>
-            <li>
-                <div class="song-img">
-                    <a href="single.html"><img src="template_web/images/play2.png" class="img-responsive" alt="" /></a>
-                </div>
-                <div class="song-text">
-                    <a href="single.html">Mark-Ronson-Uptown</a>
-                    <span class="post-date">Feb 14, 2016</span>
-                </div>
-                <div class="clearfix"></div>
-            </li>
-            <li>
-                <div class="song-img">
-                    <a href="single.html"><img src="template_web/images/play4.png" class="img-responsive" alt="" /></a>
-                </div>
-                <div class="song-text">
-                    <a href="single.html">Pharrell-Williams</a>
-                    <span class="post-date">Feb 16, 2016</span>
-                </div>
-                <div class="clearfix"></div>
-            </li>
-            <li>
-                <div class="song-img">
-                    <a href="single.html"><img src="web/images/play5.png" class="img-responsive" alt="" /></a>
-                </div>
-                <div class="song-text">
-                    <a href="single.html">Taylor Swift – Shake It Off</a>
-                    <span class="post-date">Feb 18, 2016</span>
-                </div>
-                <div class="clearfix"></div>
-            </li>
-            
-        </ul>
+            </div>
+        </div>
     </div>
 </div>
+@include('web.layout.list')
+
 @endsection

@@ -31,4 +31,8 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::group(['namespace' => 'Web'], function () {
     Route::resource('/allsong','SongnewController');
+    Route::group(['prefix' => '/artists', 'as' => 'artists.'], function () {
+        Route::get('/', 'ArtistsController@index')->name('index');
+        Route::get('/{artists_id}/songs', 'ArtistsController@songs')->name('songs');
+    });
 });

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Repositories\Contracts\ArtistsInterface;
 use Illuminate\Support\Str;
 use App\Traits\FileTrait;
+use App\Helpers\Helper;
 
 class ArtistsService
 {
@@ -19,7 +20,7 @@ class ArtistsService
     public function create(Request $request)
     {
         $data = $request->all();
-        $data['url'] =  $this->uploadFile($request, 'url'); 
+        $data['url'] =  Helper::uploadImg($request, 'url'); 
         $this->artistsRepository->create($data);
     }
 
@@ -27,7 +28,7 @@ class ArtistsService
     {   
         $data = $request->all();
         $data['id'] = Artists::find($id);
-        $data['url'] =  $this->uploadFile($request, 'url');
+        $data['url'] = Helper::uploadImg($request, 'url');
         $this->artistsRepository->update($id, $data);
     }
 }

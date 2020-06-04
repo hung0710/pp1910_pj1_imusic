@@ -29,7 +29,7 @@
                     </div>
                     @else
                     <a id="loginpop" href="{{route('login')}}"><span>Login<i class="arrow glyphicon glyphicon-chevron-right"></i></span></a>
-                    <a id="loginButton" href="{{route('register')}}"><span>Register<i class="arrow glyphicon glyphicon-chevron-right"></i></span></a>
+                    <a id="loginpop" href="{{route('register')}}"><span>Register<i class="arrow glyphicon glyphicon-chevron-right"></i></span></a>
                     @endif
                 </div>          
             </div>
