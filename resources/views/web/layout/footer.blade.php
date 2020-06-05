@@ -2,8 +2,8 @@
     <div class="footer-grid">
         <h3>Navigation</h3>
         <ul class="list1">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="radio.html">All Songs</a></li>
+          <li><a href="{{route('index')}}">Home</a></li>
+          <li><a href="{{route('allsong.index')}}">All Songs</a></li>
           <li><a href="browse.html">Albums</a></li>
           <li><a href="radio.html">New Collections</a></li>
           <li><a href="blog.html">Blog</a></li>

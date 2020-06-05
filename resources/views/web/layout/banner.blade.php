@@ -4,7 +4,7 @@
             <ul class="rslides callbacks callbacks1" id="slider4">
                 <li>
                     <div class="banner-img">
-                        <img src="template_web/images/11.jpg" class="img-responsive" alt="">
+                        <img src="{{url('template_web/images/11.jpg')}}" class="img-responsive" alt="">
                     </div>
                     <div class="banner-info">
                         <a class="trend" href="single.html">TRENDING</a>
@@ -15,7 +15,7 @@
                 </li>
                 <li>
                       <div class="banner-img">
-                          <img src="template_web/images/22.jpg" class="img-responsive" alt="">
+                          <img src="{{url('template_web/images/22.jpg')}}" class="img-responsive" alt="">
                       </div>
                       <div class="banner-info">
                           <a class="trend" href="single.html">TRENDING</a>
@@ -25,7 +25,7 @@
                 </li>
                 <li>
                       <div class="banner-img">
-                          <img src="template_web/images/22.jpg" class="img-responsive" alt="">
+                          <img src="{{url('template_web/images/22.jpg')}}" class="img-responsive" alt="">
                       </div>
                       <div class="banner-info">
                           <a class="trend" href="single.html">TRENDING</a>

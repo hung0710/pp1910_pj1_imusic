@@ -19,7 +19,7 @@ class SongService
     public function create(Request $request)
     {
         $data = $request->all();
-        $data['url'] =  $this->uploadfile($request, 'url'); 
+        $data['url'] =  $this->uploadSong($request, 'url'); 
         $this->songRepository->create($data);
     }
 
@@ -27,7 +27,7 @@ class SongService
     {   
         $data = $request->all();
         $data['id'] = Song::find($id);
-        $data['url'] =  $this->uploadfile($request, 'url');
+        $data['url'] =  $this->uploadSong($request, 'url');
         $this->songRepository->update($id, $data);
     }
 }

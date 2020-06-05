@@ -17,12 +17,18 @@ Route::get('/', function(){
 });
 
 Route::group(['namespace' => 'Auth'], function () {
-    Route::get('/register', 'RegisterController@show')->name('register');;
+    Route::get('/register', 'RegisterController@show')->name('register');
     Route::post('/register', 'RegisterController@register');
     Route::get('/login', 'LoginController@showLoginForm')->name('login');
     Route::post('/login', 'LoginController@login');
     Route::get('/logout', 'LogoutController@logout')->name('logout');
+    Route::get('/changepassword', 'ChangePasswordController@index');
+    Route::post('/changepassword', 'ChangePasswordController@ChangePassword')->name('changepassword');
 });
 
+Route::get('/index', 'HomeController@index')->name('index');
+Route::get('/contact', 'HomeController@contact')->name('contact');
 
-
+Route::group(['namespace' => 'Web'], function () {
+    Route::resource('/allsong','SongnewController');
+});

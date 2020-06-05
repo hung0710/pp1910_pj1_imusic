@@ -15,19 +15,11 @@
 	<link href="{{url('template_web/css/style.css')}}" rel='stylesheet' type='text/css' />
 	<!-- Graph CSS -->
 	<link href="{{url('template_web/css/font-awesome.css')}}" rel="stylesheet"> 
-	@yield('before-style')
 	<!-- jQuery -->
 	<!-- lined-icons -->
 	<link rel="stylesheet" href="{{url('template_web/css/icon-font.css')}}" type='text/css' />
 	<link rel="stylesheet" type="text/css" media="all" href="{{url('template_web/css/audio.css')}}">
-	
 	<link href="{{url('template_web/css/jplayer.blue.monday.min.css')}}" rel="stylesheet" type="text/css">
-	
-
-	@yield('after-styles')
-	
-	<!-- //lined-icons -->
-	<!-- Meters graphs -->
 	<script src="{{url('template_web/js/jquery-2.1.4.js')}}"></script>
 	<script type="text/javascript" src="{{url('template_web/js/mediaelement-and-player.min.js')}}"></script>
 	
@@ -43,15 +35,11 @@
 		</div>
 		@include('web.layout.footer')
 	</section>
-	@yield('before-scripts')
 	<script src="{{url('template_web/js/jquery.nicescroll.js')}}"></script>
 	<script src="{{url('template_web/js/scripts.js')}}"></script>
 	<script src="{{url('template_web/js/classie.js')}}"></script>
 	<script src="{{url('template_web/js/uisearch.js')}}"></script>
 	<!-- Bootstrap Core JavaScript -->
 	<script src="{{url('template_web/js/bootstrap.js')}}"></script>
-	<!-- <script src="{{url('template_web/js/sweetalert2@9.js')}}"></script>
-	<script src="{{url('template_web/js/my-script.js')}}"></script> -->
-	@yield('after-scripts')
 </body>
 </html>
