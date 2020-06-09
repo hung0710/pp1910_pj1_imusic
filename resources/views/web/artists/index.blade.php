@@ -1,4 +1,4 @@
 @extends('web.layout.app')
 @section('content')
-@include('web.layout.list')
+@include('web.artists.list_artists')
 @endsection

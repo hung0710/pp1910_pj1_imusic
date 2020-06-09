@@ -80,8 +80,7 @@
         </div>
         <!--//End-albums-->
         <!--//discover-view-->
-
-        @include("web.layout.list")
+        @include('web.artists.list_artists')
         <!--//discover-view-->
 
         <!-- /w3l-agile-its -->

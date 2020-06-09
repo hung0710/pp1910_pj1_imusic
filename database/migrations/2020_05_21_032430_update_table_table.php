@@ -20,8 +20,9 @@ class UpdateTableTable extends Migration
             $table->text('information');
         });
         Schema::table('albums', function (Blueprint $table) {
-            $table->string('image');
+            $table->string('url');
             $table->bigInteger('view')->default(0);
+            $table->dropColumn('singer_id');
         });
         Schema::table('songs', function ($table) {
             $table->dropColumn('musician_id');
