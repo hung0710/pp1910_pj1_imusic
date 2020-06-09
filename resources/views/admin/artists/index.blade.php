@@ -2,20 +2,20 @@
 
 @section('content')
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Artists</h1>
+    <h1 class="h3 mb-0 text-gray-800">{{__('Artists')}}</h1>
     <!-- <a href="template_admin/#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
     <a href="{{ route('admin.artists.create') }}" class="btn btn-primary btn-sm align-self-center">
-        <i class="fa fa-plus-square" aria-hidden="true"></i> Tạo mới
+        <i class="fa fa-plus-square" aria-hidden="true"></i> {{__('Create')}}
     </a>
 </div>
 <div class="table-responsive">
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Avatar</th>
-                <th>Information</th>
+                <th>{{__('ID')}}</th>
+                <th>{{__('Name')}}</th>
+                <th>{{__('Avatar')}}</th>
+                <th>{{__('Information')}}</th>
             </tr>
         </thead>
         <tbody>

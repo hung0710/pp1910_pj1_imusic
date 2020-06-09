@@ -1,6 +1,6 @@
 <div class="albums second">
     <div class="tittle-head">
-        <h3 class="tittle">Artists List</h3>
+        <h3 class="tittle">{{__('Artists List')}}</h3>
         <div class="clearfix"> </div>
     </div>
     <div class="grid-container" style="display:grid; grid-template-columns:25% 25% 25% 25%;">

@@ -26,7 +26,7 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::post('/changepassword', 'ChangePasswordController@ChangePassword')->name('changepassword');
 });
 
-Route::get('/index', 'HomeController@index')->name('index');
+Route::get('/', 'HomeController@index')->name('index');
 Route::get('/contact', 'HomeController@contact')->name('contact');
 
 Route::group(['namespace' => 'Web'], function () {

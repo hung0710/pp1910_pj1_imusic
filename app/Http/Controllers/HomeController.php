@@ -26,7 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //$artists = Artists::all()->random(6);
         $artists = $this->artistsRepository->getArtists()->paginate(config('setting.list_per_page'));
         return view('web.index',compact('artists'));
     }

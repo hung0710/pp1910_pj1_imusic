@@ -15,7 +15,7 @@ class Artists extends Model
 
     public function songs()
     {
-        return $this->morphToMany(Song::class, 'listable');
+        return $this->hasMany(Song::class);
     }
     //
 }

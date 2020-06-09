@@ -41,5 +41,6 @@
 	<script src="{{url('template_web/js/uisearch.js')}}"></script>
 	<!-- Bootstrap Core JavaScript -->
 	<script src="{{url('template_web/js/bootstrap.js')}}"></script>
+	<script src="{{url('template_web/js/readmore.js')}}"></script>
 </body>
 </html>

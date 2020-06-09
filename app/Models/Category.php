@@ -13,7 +13,7 @@ class Category extends Model
 
     protected function songs()
     {
-        return $this->belongToMany(Song::class, 'category_id');
+        return $this->hasMany(Song::class, 'category_id');
     }
 
     protected function videos()
