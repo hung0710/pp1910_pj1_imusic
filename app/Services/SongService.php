@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Repositories\Contracts\SongInterface;
 use Illuminate\Support\Str;
 use App\Traits\FileTrait;
-
+use App\Helpers\Helper;
 class SongService
 {
     use FileTrait;
@@ -19,7 +19,7 @@ class SongService
     public function create(Request $request)
     {
         $data = $request->all();
-        $data['url'] =  $this->uploadSong($request, 'url'); 
+        $data['url'] =  Helper::uploadSong($request, 'url'); 
         $this->songRepository->create($data);
     }
 
@@ -27,7 +27,7 @@ class SongService
     {   
         $data = $request->all();
         $data['id'] = Song::find($id);
-        $data['url'] =  $this->uploadSong($request, 'url');
+        $data['url'] =  Helper::uploadSong($request, 'url');
         $this->songRepository->update($id, $data);
     }
 }

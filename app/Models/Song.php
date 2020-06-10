@@ -4,6 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models;
+use App\Models\FavouriteList;
+use App\Models\Category;
+use App\Models\Album;
+use App\Models\Artists;
+use App\Models\Comment;
+
 class Song extends Model
 {
     protected $table = 'songs';
@@ -12,8 +18,8 @@ class Song extends Model
         'singer',
         'url',
         'lyrics',
+        'artists_id',
         'category_id',
-        'artists',
         'view',
     ];
 
@@ -29,7 +35,7 @@ class Song extends Model
 
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function albums()
@@ -39,6 +45,10 @@ class Song extends Model
     public function favouriteList()
     {
         return $this->morphedByMany(FavouriteList::class, 'listable');
+    }
+    public function artists()
+    {
+        return $this->belongsTo(Artists::class);
     }
 
     //

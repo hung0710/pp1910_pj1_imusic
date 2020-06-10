@@ -30,7 +30,7 @@ class UpdateTableTable extends Migration
             $table->dropColumn('singer_id');
             $table->string('url')->after('name');
             $table->string('singer')->after('url')->nullable();
-            $table->string('artists')->after('category_id');
+            $table->integer('artists_id')->after('category_id');
         });
         Schema::drop('singers');
         //
