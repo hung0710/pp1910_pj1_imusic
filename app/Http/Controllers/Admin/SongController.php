@@ -33,6 +33,7 @@ class SongController extends Controller
     public function index()
     {
         $songs = $this->songRepository->getAll();
+
         return view('admin.song.index', compact('songs'));
     }
 
@@ -40,12 +41,14 @@ class SongController extends Controller
     {
         $artistses = $this->artistsRepository->getAll();
         $categories = $this->categoryRepository->getAll();
+
         return view('admin.song.create', compact('categories','artistses') );
     }
 
     public function store(SongFormRequest $request)
     {
-        $this->songService->create($request);
+        $this->songRepository->createSong($request);
+
         return redirect('/admin/song')->with("success");
     }
 
@@ -54,18 +57,21 @@ class SongController extends Controller
         $artistses = $this->artistsRepository->getAll();
         $categories = $this->categoryRepository->getAll();
         $song = $this->songRepository->find($id);
+
         return view('admin.song.edit', compact('song','categories','artistses'));
     }
 
     public function update(Request $request, $id)
     {
-        $this->songService->update($request, $id);
-        return redirect('/admin/song');
+        $this->songRepository->updateSong($request, $id);
+
+        return redirect('/admin/song')->with('Update successful');
     }    
 
     public function destroy($id)
     {
         $this->songRepository->delete($id);
-        return redirect('admin/song')->with('status', "The ticket $id has been deleted!");
+
+        return redirect('admin/song')->with("The song $id has been deleted!");
     }
 }

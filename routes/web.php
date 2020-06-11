@@ -35,4 +35,8 @@ Route::group(['namespace' => 'Web'], function () {
         Route::get('/', 'ArtistsController@index')->name('index');
         Route::get('/{artists_id}/songs', 'ArtistsController@songs')->name('songs');
     });
+    Route::group(['prefix' => '/album', 'as' => 'album.'], function () {
+        Route::get('/', 'AlbumController@index')->name('index');
+        Route::get('/{album_id}/songs', 'AlbumController@songs')->name('songs');
+    });
 });
