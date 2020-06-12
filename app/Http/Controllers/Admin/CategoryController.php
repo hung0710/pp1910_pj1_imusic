@@ -19,10 +19,9 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $category = $this->categoryRepository->getAll();
-        return view('admin.category.index', [
-            'categories' => $category
-        ]);
+        $categories = $this->categoryRepository->getAll();
+
+        return view('admin.category.index', compact('categories'));
     }
 
     public function create()
@@ -34,6 +33,7 @@ class CategoryController extends Controller
     {
         $data = $request->all();
         $this->categoryRepository->create($data);
+
         return redirect('/admin/category')->with("success");
     }
 
@@ -41,7 +41,8 @@ class CategoryController extends Controller
     {
         $data = $request->all();
         $this->categoryRepository->update($id, $data);
-        return redirect('/admin/category');
+
+        return redirect('/admin/category')->with('Update successful');
     }
 
     public function show($id)
@@ -52,12 +53,14 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = $this->categoryRepository->find($id);
+
         return view('admin.category.edit', compact('category'));
     }
 
     public function destroy($id)
     {
         $this->categoryRepository->delete($id);
-        return redirect()->route('admin.category.index');
+
+        return redirect()->route('admin.category.index')->with("The category $id has been deleted!");
     }
 }

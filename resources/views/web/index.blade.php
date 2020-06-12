@@ -81,6 +81,7 @@
         <!--//End-albums-->
         <!--//discover-view-->
         @include('web.artists.list_artists')
+        @include('web.album.list_album')
         <!--//discover-view-->
 
         <!-- /w3l-agile-its -->
@@ -88,7 +89,6 @@
     @include('web.layout.musicright')
     <!--//music-right-->
     <div class="clearfix"></div>
-    <!-- /w3l-agile-its -->
-    @include('web.layout.wrapper')
+    <!-- /w3l-agile-its --> 
 </div>
 @endsection
