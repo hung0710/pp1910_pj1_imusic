@@ -5,9 +5,11 @@
     </div>
     <div class="grid-container" style="display:grid; grid-template-columns:25% 25% 25% 25%;">
         @foreach($artists as $artists)
-        <div class="grid-item" style="padding-left : 100px;">
-            <a href="{{route('artists.songs', ['artists_id' => $artists->id])}}"><img src="{{$artists->url}}" title="album-name" width="100%"></a>
-            <p>{{$artists->name}}</p>
+        <div class="grid-item" style="padding : 10px;">
+            <a href="{{route('artists.songs', ['artists_id' => $artists->id])}}"><img src="{{$artists->url}}" title="artists-name" width="100%"></a>
+            <h4>
+            <a href="{{route('artists.songs', ['artists_id' => $artists->id])}}"><p>{{$artists->name}}</p></a>
+        </h4>
         </div>
         @endforeach
     </div>

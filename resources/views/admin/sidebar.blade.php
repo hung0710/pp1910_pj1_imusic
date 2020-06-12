@@ -44,7 +44,7 @@
       <h6 class="collapse-header">Custom Components:</h6>
       <a class="collapse-item" href="{{route('admin.song.index')}}">Songs</a>
       <a class="collapse-item" href="{{route('admin.category.index')}}">Categories</a>
-      <a class="collapse-item" href="#">Albums</a>
+      <a class="collapse-item" href="{{route('admin.album.index')}}">Albums</a>
       <a class="collapse-item" href="{{route('admin.artists.index')}}">Artistses</a>
 
     </div>
