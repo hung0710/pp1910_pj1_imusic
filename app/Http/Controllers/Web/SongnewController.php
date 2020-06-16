@@ -5,14 +5,25 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use Validator;
-use Response;
-use Redirect;
-use Session;
 use App\Models\Song;
+use App\Repositories\Contracts\SongInterface;
+use App\Repositories\Contracts\ArtistsInterface;
+use App\Repositories\Contracts\CategoryInterface;
 
 class SongnewController extends Controller
-{
+{   
+    protected $artistsRepository;
+    protected $songRepository;
+    protected $categoryRepository;
+
+    public function __construct(ArtistsInterface $artistsRepository, 
+    SongInterface $songRepository,
+    CategoryInterface $categoryRepository)
+    {
+        $this->artistsRepository = $artistsRepository;
+        $this->songRepository = $songRepository;
+        $this->categoryRepository = $categoryRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -20,18 +31,16 @@ class SongnewController extends Controller
      */
     public function index()
     {
-       $input = Song::orderBy('id','desc')->paginate(10);
-       return view('web.songnew.index')->with('v_song', $input);
+        $songs = $this->songRepository->getSong()->paginate(config('setting.list_song'));
+
+        return view('web.songnew.index', compact('songs'));
     }
 
     public function show($id)
     {
-        $data = Song::findOrFail($id);
-        $input = Song::orderBy('id','desc')->paginate(5); 
-        return view('web.songnew.show')->with([
-            'v_music' => $data,
-            'v_track' => $input,
-        ]);
+        $songs = $this->songRepository->find($id);
+        $track = $this->songRepository->getSong()->paginate(config('setting.list_track'));
+        return view('web.songnew.show', compact('songs','track'));
     }
 
 }

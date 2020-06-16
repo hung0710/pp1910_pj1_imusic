@@ -23,8 +23,8 @@
                 <tr>
                     <td>{{ $artists->id }}</td>
                     <td>{{ $artists->name }}</td>
-                    <td><img style="width: 100%" src="{{$artists->url}}"></td>
-                    <td>{{ $artists->information }}</td>
+                    <td><img style="width: 200px" src="{{$artists->url}}"></td>
+                    <td>{{ Str::limit($artists->information, 200) }}</td>
                     <td>
                         <a href="{{route('admin.artists.edit', ['artists_id' => $artists->id])}}"><i class="fa fa-edit"></i></a>
                         <a href="{{route('admin.artists.delete', ['artists_id' => $artists->id])}}"><i class="fa fa-trash" ></i></a>

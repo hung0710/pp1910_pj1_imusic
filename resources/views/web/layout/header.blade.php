@@ -4,7 +4,7 @@
         <div class="profile_details" style="height: 64px;">		
             <div class="col-md-4 serch-part">
                 <div id="sb-search" class="sb-search">
-                    <form action="#" method="get">
+                    <form action="{{route('search')}}" method="get">
                         <input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
                         <input class="sb-search-submit" type="submit" value="">
                         <span class="sb-icon-search"> </span>

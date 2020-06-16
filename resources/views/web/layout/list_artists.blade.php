@@ -13,6 +13,5 @@
         </div>
         @endforeach
     </div>
-    {!! $artistses->render() !!}
 </div>
 <div class="clearfix"></div>

@@ -49,6 +49,7 @@
                     @endforeach
                 </ul>
             </div>
+            {!! $songOfArtists->render() !!}
         </div>
     </div>
 </div>
