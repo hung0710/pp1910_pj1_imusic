@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 Interface SongInterface extends RepositoryInterface
 {
+    public function getSong();
+
     public function getSongOfArtists($id);
     
     public function createSong(Request $request);

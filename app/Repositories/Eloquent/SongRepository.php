@@ -15,9 +15,15 @@ class SongRepository extends BaseRepository implements SongInterface
     {
         $this->model = $song;
     }
+
     public function getModel()
     {
         return Song::class;
+    }
+
+    public function getSong()
+    { 
+        return $this->model->orderBy('name');
     }
     public function getSongOfArtists($id)
     {

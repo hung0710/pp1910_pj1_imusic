@@ -28,6 +28,7 @@ Route::group(['namespace' => 'Auth'], function () {
 
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::get('/search', 'HomeController@search')->name('search'); 
 
 Route::group(['namespace' => 'Web'], function () {
     Route::resource('/allsong','SongnewController');

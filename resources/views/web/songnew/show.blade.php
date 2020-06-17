@@ -7,14 +7,13 @@
         <h3 class="tittle">Single <span class="new">Page</span></h3>
         <div class="clearfix"> </div>
     </div>
-    <div>
         <div class="col-md-10 player" style="background: #777;">
             <div class="audio-player">
-				<audio id="audio-player"  controls autoplay>
-					<source src="{{ $v_music->url}}" type="audio/mpeg">
-				</audio>
-			</div>
-			<script type="text/javascript">
+                <audio id="audio-player"  controls autoplay>
+                    <source src="{{ $songs->url}}" type="audio/mpeg">
+                </audio>
+            </div>
+            <script type="text/javascript">
                 $(function(){
                     $('#audio-player').mediaelementplayer({
                     alwaysShowControls: true,
@@ -22,56 +21,35 @@
                     audioVolume: 'horizontal',
                     });
                 });
-			</script>
-			<ul class="next-top">
+            </script>
+            <ul class="next-top">
                 <li><a class="ar" href="#"></a></li>
                 <li><a class="ar2" href="#"></a></li>
-			</ul>	
-		</div>
-		<div class="col-md-8">
-			<table class="">
-                <tr>
-                    <th style="color: blue;">Song :</th>
-                    <td>{{ $v_music->name }}</td>
-                </tr>
-                <tr>
-                    <th style="color: blue;">Musician :</th>
-                    <td>{{ $v_music->singer }}</td>
-                </tr>
-                <tr>
-                    <th style="color: blue;">Artists :</th>
-                    <td>{{ $v_music->artists->name }}</td>
-                </tr>
-                <tr>
-                    <th style="color: blue;">Lyrics :</th>
-                    <td>{{ $v_music->lyrics }}</td>
-                </tr>
-			</table>
-		</div>
-        <div class="col-md-4">
-			<h3 ><a href="">{{__('List Song')}}</a></h3>
-			<div class="row">
-				<div class="col-md-6"><hr style="margin: 0px;border-color: #698B22"></div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<table class="table table-hover">
-						<tbody>
-							@foreach($v_track as $_song =>$song) 
-								<tr>
-                                <td><a href="{{ URL ::to('allsong/'.$song->id)}}">{{ $song->name }}</td>
-								</tr>
-							@endforeach 
-						</tbody>
-					</table>
-					{!! $v_track->render() !!}
-				</div>
-			</div>
+            </ul>	
         </div>
-    </div>
-    {{-- <div class="single_left">
-        <!-- /agileinfo -->
-    </div> --}}
+        <div class="col-md-8">
+            <table class="">
+                <tr>
+                    <th style="color: blue;">{{__('Song')}} :</th>
+                    <td>{{ $songs->name }}</td>
+                </tr>
+                <tr>
+                    <th style="color: blue;">{{__('Musician')}} :</th>
+                    <td>{{ $songs->singer }}</td>
+                </tr>
+                <tr>
+                    <th style="color: blue;">{{__('Artists')}} :</th>
+                    <td>{{ $songs->artists->name }}</td>
+                </tr>
+                <tr>
+                    <th style="color: blue;">{{__('Lyrics')}} :</th>
+                    <td>{{ $songs->lyrics }}</td>
+                </tr>
+            </table>
+        </div>
+
+@include('web.songnew.list_track')
+
     <div class="response" style="width: 100%!important;">
         <h4>{{__('Responses')}}</h4>
         
