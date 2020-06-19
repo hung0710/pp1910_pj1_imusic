@@ -21,16 +21,16 @@ class ArtistsController extends Controller
     }
     public function index()
     {
-        $artists = $this->artistsRepository->getAll();
+        $artistses = $this->artistsRepository->getArtists()->paginate(config('setting.list_per_page'));
 
-        return view('web.artists.index', compact('artists'));
+        return view('web.artists.index', compact('artistses'));
     }
 
     public function songs($id)
     {
         $songOfArtists = $this->songRepository
             ->getSongOfArtists($id)
-            ->paginate(config('settings.list_per_page'));
+            ->paginate(config('setting.list_song_artists'));
         $artistses = $this->artistsRepository->find($id);
 
         return view('web.artists.list_song', compact('artistses','songOfArtists'));

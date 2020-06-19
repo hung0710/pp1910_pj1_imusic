@@ -15,12 +15,12 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach($v_song as $song)
+					@foreach($songs as $song)
 						<tr>
 							<td><a href="{{ URL ::to('allsong/'.$song->id)}}">{{ $song->name }}</td>
 							<td >
-								<audio id="audio-player{{$song->id}}"  controls>	
-									<source src="{{ $song->url}}" type="audio/mpeg">
+								<audio id="audio-player"  controls>
+									<source src="{{ $song->url }}" type="audio/mpeg"></source>
 								</audio>
 							</td>
 							<td>{{ $song->artists->name }}</td>
@@ -29,7 +29,7 @@
 					@endforeach
 				</tbody>
 			</table>
-			{!! $v_song->render() !!}
+			{!! $songs->render() !!}
 		</div>
 	</div>
-@stop
+@endsection
