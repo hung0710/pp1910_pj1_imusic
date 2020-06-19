@@ -23,16 +23,14 @@
                         });
                     </script>
                     <ul class="next-top">
-                        <li><a class="ar" href="#" onclick="previousSong()"> <img src="{{url('web/images/arrow.png')}}" alt="" /></a></li>
-                        <li><a class="ar2" href="#" onclick="nextSong()"><img src="{{url('web/images/arrow2.png')}}" alt="" /></i></a></li>
+                        <li><a class="ar" href="#" onclick="previousSong()"> <img src="{{url('template_web/images/arrow.png')}}" alt="" /></a></li>
+                        <li><a class="ar2" href="#" onclick="nextSong()"><img src="{{url('template_web/images/arrow2.png')}}" alt="" /></i></a></li>
                     </ul>
                 </div>
             </div>
-            
             <div>
                 <div class="jp-playlist" style="margin-top : 20px">
                     <ul style="display: block;">
-                        
                         
                     </ul>
                 </div>

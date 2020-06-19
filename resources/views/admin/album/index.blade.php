@@ -26,8 +26,9 @@
                         <td>{{ $album->name }}</td>
                         <td><img style="width: 30%" src="{{$album->url}}"></td>
                         <td>
-                    <a href="{{route('admin.album.edit', ['album_id' => $album->id])}}"><i class="fa fa-edit"></i></a>
-                    <a href="{{route('admin.album.delete', ['album_id' => $album->id])}}"><i class="fa fa-trash" ></i></a>
+                            <a href="{{route('admin.album.edit', ['album_id' => $album->id])}}"><i class="fa fa-edit"></i></a>
+                            <a href="{{route('admin.album.delete', ['album_id' => $album->id])}}"><i class="fa fa-trash" ></i></a>
+                            <a href="{{route('admin.album.addsong', ['album_id' => $album->id])}}"><i class="fa fa-plus-square" ></i></a>
                         </td>
                 </tr>
             @endforeach

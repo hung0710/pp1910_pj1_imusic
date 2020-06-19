@@ -28,7 +28,9 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-block"></div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <a href="{{route('index')}}"><img src="{{url('template_web/images/logomusic.png')}}" alt=""> </a>
+          </div>
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
@@ -57,12 +59,12 @@
                 </div>
                 <input type="submit" class="btn btn-primary btn-user btn-block" value="Đăng ký tài khoản">
                 <hr>
-                <a href="#" class="btn btn-google btn-user btn-block">
+                <!-- <a href="#" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Đăng ký với tài khoản Google
                 </a>
                 <a href="#" class="btn btn-facebook btn-user btn-block">
                   <i class="fab fa-facebook-f fa-fw"></i> Đăng ký với tài khoản Facebook
-                </a>
+                </a> -->
               </form>
               <hr>
               <div class="text-center">

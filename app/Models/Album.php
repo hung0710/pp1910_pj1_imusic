@@ -13,9 +13,9 @@ class Album extends Model
         'view',
     ];
 
-    protected function songs()
+    public function albumDetail()
     {
-        return $this->morphToMany(Song::class, 'lisable');
+        return $this->hasMany(AlbumDetail::class);
     }
     //
 }
