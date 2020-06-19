@@ -43,6 +43,7 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
         Route::get('/{album_id}/edit', 'AlbumController@edit')->name('edit');
         Route::post('/{album_id}/update', 'AlbumController@update')->name('update');
         Route::get('/{album_id}/delete', 'AlbumController@destroy')->name('delete');
+        Route::get('/{album_id}/addsong', 'AlbumController@addsong')->name('addsong');
     });
 
     Route::group(['middleware' => 'auth:admin'], function () {

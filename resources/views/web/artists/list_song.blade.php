@@ -4,7 +4,7 @@
 <div class="member-entry info">
     <div class="member-details">
         <a href="#" class="member-img">
-            <img style="width: 10%" src="{{$artistses->url }}" class="img-rounded" alt=" ">
+            <img  src="{{$artistses->url }}" class="img-rounded" alt=" ">
         </a>
         <h4>
             <a href="{{route('artists.songs', ['artists_id' => $artistses->id])}}" class="name"><p>{{__('Name')}}: {{$artistses->name}}</p></a>
@@ -33,7 +33,6 @@
 <div class="col-sm-12">
     <div class="tittle-head">
         <h3 class="tittle">{{__('List Song')}} <span class="new">View</span></h3>
-        <a href="#"><h4 class="tittle two">See all</h4></a>
         <div class="clearfix"> </div>
     </div>
     <div id="jp_container_1" class="jp-video jp-video-270p" role="application" aria-label="media player">
@@ -41,17 +40,17 @@
             <div class="jp-playlist">
                 <ul style="display: block;">
                     @foreach($songOfArtists as $song)
-                        <li class="jp-playlist-current">
-                            <div>
-                                <a href="{{ URL ::to('allsong/'.$song->id)}}" class="jp-playlist-item jp-playlist-current" tabindex="0">{{ $song->name }} <span class="jp-artist"></span></a>
-                            </div>
-                        </li>
+                        <div class="col-md-8">
+                            <li class="jp-playlist-current">
+                                <a href="{{ URL ::to('allsong/'.$song->id)}}" class="jp-playlist-item jp-playlist-current" tabindex="0">{{ $song->name }} <span class="jp-artist">by {{$song->artists->name}}</span></a>
+                            </li>
+                        </div>
                     @endforeach
                 </ul>
             </div>
-            {!! $songOfArtists->render() !!}
         </div>
     </div>
 </div>
+{{ $songOfArtists->links() }}
 
 @endsection

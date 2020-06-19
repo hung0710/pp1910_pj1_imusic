@@ -4,5 +4,5 @@ return [
     'song' => 'song',
     'list_song' => 10,
     'list_track' => 5,
-    'list_song_artists' => 5,
+    'list_song_artists' => 6,
 ];

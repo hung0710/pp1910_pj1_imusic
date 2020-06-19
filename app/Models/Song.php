@@ -38,10 +38,11 @@ class Song extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function albums()
+    public function albumDetail()
     {
-        return $this->morphedByMany(Album::class, 'listable');
+        return $this->belongsTo(AlbumDetail::class);
     }
+    
     public function favouriteList()
     {
         return $this->morphedByMany(FavouriteList::class, 'listable');

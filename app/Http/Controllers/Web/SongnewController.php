@@ -40,6 +40,7 @@ class SongnewController extends Controller
     {
         $songs = $this->songRepository->find($id);
         $track = $this->songRepository->getSong()->paginate(config('setting.list_track'));
+        
         return view('web.songnew.show', compact('songs','track'));
     }
 

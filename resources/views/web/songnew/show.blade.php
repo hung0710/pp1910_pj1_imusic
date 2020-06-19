@@ -4,10 +4,10 @@
     <!--/music-right-->
     
     <div class="tittle-head">
-        <h3 class="tittle">Single <span class="new">Page</span></h3>
+        <h3 class="tittle">{{$songs->name}} <span class="new">{{$songs->artists->name}}</span></h3>
         <div class="clearfix"> </div>
     </div>
-        <div class="col-md-10 player" style="background: #777;">
+        <div class="col-md-6 player" style="background: #777;">
             <div class="audio-player">
                 <audio id="audio-player"  controls autoplay>
                     <source src="{{ $songs->url}}" type="audio/mpeg">
@@ -27,29 +27,16 @@
                 <li><a class="ar2" href="#"></a></li>
             </ul>	
         </div>
-        <div class="col-md-8">
-            <table class="">
-                <tr>
-                    <th style="color: blue;">{{__('Song')}} :</th>
-                    <td>{{ $songs->name }}</td>
-                </tr>
-                <tr>
-                    <th style="color: blue;">{{__('Musician')}} :</th>
-                    <td>{{ $songs->singer }}</td>
-                </tr>
-                <tr>
-                    <th style="color: blue;">{{__('Artists')}} :</th>
-                    <td>{{ $songs->artists->name }}</td>
-                </tr>
-                <tr>
-                    <th style="color: blue;">{{__('Lyrics')}} :</th>
-                    <td>{{ $songs->lyrics }}</td>
-                </tr>
-            </table>
+        <div class="col-md-12" >
+            <div class="col-md-6">
+                <p></p>
+                <p>Singer :<a href="{{route('artists.songs',['artists_id' => $songs->artists->id])}}">{{$songs->artists->name}}</a></p>
+                <p>Musician :<b>{{$songs->singer}}</b></p>
+                <p>Category :<b>{{$songs->category->title}}</b></p>
+                <p>Lytics :<b>{{$songs->lyrics}}</b></p>
+            </div>
+            @include('web.songnew.list_track')
         </div>
-
-@include('web.songnew.list_track')
-
     <div class="response" style="width: 100%!important;">
         <h4>{{__('Responses')}}</h4>
         

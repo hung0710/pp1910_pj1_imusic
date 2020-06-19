@@ -12,5 +12,11 @@ Interface AlbumInterface extends RepositoryInterface
     public function createAlbum(Request $request);
 
     public function updateAlbum(Request $request, $id);
+
+    public function addSong($id);
+
+    public function removeSongFromAlbum($albumDetailId);
+
+    public function createAlbumDetail($songId, $id);
     //
 }
