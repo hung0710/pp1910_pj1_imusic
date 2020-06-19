@@ -1133,6 +1133,7 @@ img {
 }
 .img-rounded {
   border-radius: 6px;
+  height: 150px;
 }
 .img-thumbnail {
   display: inline-block;
