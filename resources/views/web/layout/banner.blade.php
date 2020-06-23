@@ -25,7 +25,7 @@
                 </li>
                 <li>
                       <div class="banner-img">
-                          <img src="{{url('template_web/images/22.jpg')}}" class="img-responsive" alt="">
+                          <img src="{{url('template_web/images/33.jpg')}}" class="img-responsive" alt="">
                       </div>
                       <div class="banner-info">
                           <a class="trend" href="single.html">TRENDING</a>

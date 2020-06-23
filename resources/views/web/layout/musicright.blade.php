@@ -12,7 +12,7 @@
                         <ul style="display: block;">
                             @foreach($songs as $song)
                                 <div>
-                                    <a href="{{ URL ::to('allsong/'.$song->id)}}" class="jp-playlist-item" tabindex="0">{{$song->name}} <span class="jp-artist">by {{$song->artists->name}}</span></a>
+                                    <a href="{{route('song.show', ['song_id' => $song->id])}}" class="jp-playlist-item" tabindex="0">{{$song->name}} <span class="jp-artist">by {{$song->artists->name}}</span></a>
                                 </div>
                             @endforeach
                         </ul>

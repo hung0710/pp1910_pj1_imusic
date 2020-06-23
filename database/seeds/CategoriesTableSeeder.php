@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Models\Category;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\DB;
+
 class CategoriesTableSeeder extends Seeder
 {
     /**
@@ -12,7 +14,11 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Category::class, 10)->create();
+        DB::table('categories')->insert([
+            ['title' => 'Nhạc Việt' ],
+            ['title' => 'Nhạc Hoa' ],
+            ['title' => 'K-Pop' ],
+        ]);
         //
     }
 }

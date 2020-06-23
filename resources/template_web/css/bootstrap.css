@@ -1120,6 +1120,7 @@ figure {
 }
 img {
   vertical-align: middle;
+  height: 150px;
 }
 .img-responsive,
 .thumbnail > img,
@@ -1132,6 +1133,7 @@ img {
 }
 .img-rounded {
   border-radius: 6px;
+  height: 150px;
 }
 .img-thumbnail {
   display: inline-block;

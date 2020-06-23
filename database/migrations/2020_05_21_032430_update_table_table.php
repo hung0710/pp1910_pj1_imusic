@@ -13,12 +13,6 @@ class UpdateTableTable extends Migration
      */
     public function up()
     {	
-        Schema::rename('musicians','artistses');
-        Schema::table('artistses', function (Blueprint $table) {
-            $table->string('url');
-            $table->dropColumn('description');
-            $table->text('information');
-        });
         Schema::table('albums', function (Blueprint $table) {
             $table->string('url');
             $table->bigInteger('view')->default(0);
