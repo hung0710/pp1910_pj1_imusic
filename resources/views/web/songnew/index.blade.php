@@ -17,8 +17,8 @@
 				<tbody>
 					@foreach($songs as $song)
 						<tr>
-							<td><a href="{{ URL ::to('allsong/'.$song->id)}}">{{ $song->name }}</a></td>
-							<td><a href="{{ URL ::to('allsong/'.$song->id)}}" class="fa fa-play"></a></td>
+							<td><a href="{{route('song.show', ['song_id' => $song->id])}}">{{ $song->name }}</a></td>
+							<td><a href="{{route('song.show', ['song_id' => $song->id])}}" class="fa fa-play"></a></td>
 							<td><a href="{{route('artists.songs',['artists_id' => $song->artists->id])}}">{{ $song->artists->name }}</a></td>
 							<td>{{ $song->category->title }}</td>
 						</tr>

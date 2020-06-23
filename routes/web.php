@@ -31,7 +31,10 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 Route::get('/search', 'HomeController@search')->name('search'); 
 
 Route::group(['namespace' => 'Web'], function () {
-    Route::resource('/allsong','SongnewController');
+    Route::group(['prefix' => '/song', 'as' => 'song.'], function () {
+        Route::get('/', 'SongnewController@index')->name('index');
+        Route::get('/{song_id}/show', 'SongnewController@show')->name('show');
+    });
     Route::group(['prefix' => '/artists', 'as' => 'artists.'], function () {
         Route::get('/', 'ArtistsController@index')->name('index');
         Route::get('/{artists_id}/songs', 'ArtistsController@songs')->name('songs');
@@ -40,4 +43,5 @@ Route::group(['namespace' => 'Web'], function () {
         Route::get('/', 'AlbumController@index')->name('index');
         Route::get('/{album_id}/songs', 'AlbumController@songs')->name('songs');
     });
+    Route::post('/comments', 'CommentController@store')->name('comments');
 });
