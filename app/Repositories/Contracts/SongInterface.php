@@ -14,5 +14,7 @@ Interface SongInterface extends RepositoryInterface
     public function createSong(Request $request);
 
     public function updateSong(Request $request, $id);
+
+    public function getListAudioOfAlbum($albumId);
     //
 }

@@ -28,7 +28,7 @@
         <!--//End-albums-->
         <!--//discover-view-->
         @include('web.layout.list_artists')
-        @include('web.album.list_album')
+        @include('web.layout.list_album')
         <!--//discover-view-->
 
         <!-- /w3l-agile-its -->

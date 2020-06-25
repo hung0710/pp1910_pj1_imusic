@@ -39,10 +39,11 @@
         <div class="jp-type-playlist">
             <div class="jp-playlist">
                 <ul style="display: block;">
+                <?php $i = 1; ?>
                     @foreach($songOfArtists as $song)
                         <div class="col-md-8">
                             <li class="jp-playlist-current">
-                                <a href="{{route('song.show', ['song_id' => $song->id])}}" class="jp-playlist-item jp-playlist-current" tabindex="0">{{ $song->name }} <span class="jp-artist">by {{$song->artists->name}}</span></a>
+                                <a href="{{route('song.show', ['song_id' => $song->id])}}" class="song-item @if($i == 1)jp-playlist-current1 @endif" tabindex="0">{{$i++}}.{{ $song->name }} <span class="jp-artist">by {{$song->artists->name}}</span></a>
                             </li>
                         </div>
                     @endforeach

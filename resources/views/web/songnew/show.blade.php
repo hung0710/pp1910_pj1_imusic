@@ -33,7 +33,7 @@
                 <p>Singer :<a href="{{route('artists.songs',['artists_id' => $songs->artists->id])}}">{{$songs->artists->name}}</a></p>
                 <p>Musician :<b>{{$songs->singer}}</b></p>
                 <p>Category :<b>{{$songs->category->title}}</b></p>
-                <p>Lytics :<b>{{$songs->lyrics}}</b></p>
+                <p>Lyrics :<b>{{$songs->lyrics}}</b></p>
             </div>
             @include('web.songnew.list_track')
         </div>

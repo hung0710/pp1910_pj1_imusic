@@ -7,7 +7,6 @@
                         <img src="{{url('template_web/images/11.jpg')}}" class="img-responsive" alt="">
                     </div>
                     <div class="banner-info">
-                        <a class="trend" href="single.html">TRENDING</a>
                         <h3>Let Your Home</h3>
                         <p>Album by <span>Rock star</span></p>
                     </div>
@@ -18,7 +17,6 @@
                           <img src="{{url('template_web/images/22.jpg')}}" class="img-responsive" alt="">
                       </div>
                       <div class="banner-info">
-                          <a class="trend" href="single.html">TRENDING</a>
                           <h3>Charis Brown feet</h3>
                           <p>Album by <span>Rock star</span></p>
                       </div>
@@ -28,7 +26,6 @@
                           <img src="{{url('template_web/images/33.jpg')}}" class="img-responsive" alt="">
                       </div>
                       <div class="banner-info">
-                          <a class="trend" href="single.html">TRENDING</a>
                           <h3>Charis Brown feet</h3>
                           <p>Album by <span>Rock star</span></p>
                       </div>

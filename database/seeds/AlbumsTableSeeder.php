@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Models\Album;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\DB;
+
 class AlbumsTableSeeder extends Seeder
 {
     /**
@@ -12,7 +14,14 @@ class AlbumsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Album::class, 10)->create();
+        DB::table('albums')->insert([
+            ['name' => 'Bài hát hay tháng 1', 'url' => '/img/năng.jpg' ],
+            ['name' => 'Bài hát hay tháng 2', 'url' => '/img/anh_dep_viet_nam_2.jpg' ],
+            ['name' => 'Bài hát hay tháng 3', 'url' => '/img/hoa-sen.jpg' ],
+            ['name' => 'Thất tình', 'url' => '/img/mưa.jpg' ],
+            ['name' => 'Mưa', 'url' => '/img/mưa.jpg' ],
+            ['name' => 'Cover', 'url' => '/img/mưa.jpg' ],
+        ]);
         //
     }
 }

@@ -46,6 +46,15 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
         Route::get('/{album_id}/addsong', 'AlbumController@addsong')->name('addsong');
     });
 
+    Route::group(['as' => 'albumdetail.', 'prefix' => '/albumdetail'], function () {
+        Route::get('/', 'AlbumDetailController@index')->name('index');
+        Route::get('/create', 'AlbumDetailController@create')->name('create');
+        Route::post('/create', 'AlbumDetailController@store');
+        Route::get('/{albumdetail_id}/edit', 'AlbumDetailController@edit')->name('edit');
+        Route::post('/{albumdetail_id}/update', 'AlbumDetailController@update')->name('update');
+        Route::get('/{albumdetail_id}/delete', 'AlbumDetailController@destroy')->name('delete');
+    });
+
     Route::group(['middleware' => 'auth:admin'], function () {
         Route::get('/', 'HomeController@index')->name('index');
         Route::get('/index', 'HomeController@index')->name('index');

@@ -51,4 +51,11 @@ class SongRepository extends BaseRepository implements SongInterface
         return $this->update($id, $data);
     }
 
+    public function getListAudioOfAlbum($albumId)
+    {
+        return $this->model->whereIn('id', function ($query) use ($albumId) {
+                $query->select('song_id')->from('album_detail')->where('album_id', $albumId)->get();
+        })->get();
+    }
+
 }

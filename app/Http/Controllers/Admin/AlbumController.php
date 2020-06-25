@@ -61,32 +61,4 @@ class AlbumController extends Controller
         return redirect('admin/album')->with("The album $id has been deleted!");
     }
 
-    public function addSong($id)
-    {
-        $album = $this->albumRepository->find($id);
-        $songs = $this->songRepository->getSong()->paginate(config('setting.list_per_page'));
-        return view('admin.album.add_song', compact('songs','album'));
-    }
-
-    public function removeSong($albumDetailId)
-    {
-        $albumDetail = $this->albumRepository->removeSongFromAlbum($albumDetailId);
-        if (!$albumDetail) {
-            return redirect()->back()->with('errors');
-        }
-
-        return redirect()->back()->with('success');
-    }
-
-    public function createAlbumDetail(Request $request, $id)
-    {
-        $input = $request['song_id'];
-        $albumDetail = $this->albumRepository->createAlbumDetail($input, $id);
-        if (!$albumDetail) {
-            return redirect()->back()->with('errors');
-        }
-
-        return redirect()->back()->with('success');
-    }
-
 }
