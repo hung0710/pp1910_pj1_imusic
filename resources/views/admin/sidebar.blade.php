@@ -46,6 +46,7 @@
       <a class="collapse-item" href="{{route('admin.category.index')}}">Categories</a>
       <a class="collapse-item" href="{{route('admin.album.index')}}">Albums</a>
       <a class="collapse-item" href="{{route('admin.artists.index')}}">Artistses</a>
+      <a class="collapse-item" href="{{route('admin.albumdetail.index')}}">Album_Detail</a>
 
     </div>
   </div>

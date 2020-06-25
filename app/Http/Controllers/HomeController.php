@@ -36,11 +36,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $album = $this->albumRepository->getAlbum()->paginate(config('setting.list_per_page'));
+        $albums = $this->albumRepository->getAlbum()->paginate(config('setting.list_per_page'));
         $artistses = $this->artistsRepository->getArtists()->paginate(config('setting.list_per_page'));
         $songs = $this->songRepository->getSong()->paginate(config('setting.list_song_artists'));
 
-        return view('web.index', compact('artistses','album','songs'));
+        return view('web.index', compact('artistses','albums','songs'));
     }
     
     public function contact() 

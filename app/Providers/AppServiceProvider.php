@@ -29,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Contracts\AlbumInterface::class,
             \App\Repositories\Eloquent\AlbumRepository::class,
         );
+        $this->app->singleton(
+            \App\Repositories\Contracts\AlbumDetailInterface::class,
+            \App\Repositories\Eloquent\AlbumDetailRepository::class,
+        );
         //
     }
 

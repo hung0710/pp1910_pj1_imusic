@@ -11,6 +11,5 @@
         </div>
         @endforeach
     </div>
-    {!! $albums->links() !!}
 </div>
 <div class="clearfix"></div>
