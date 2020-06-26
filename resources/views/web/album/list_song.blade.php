@@ -13,12 +13,17 @@
     <div id="jp_container_1" style="margin: 20px;">
         <div class="jp-type-playlist1">
             <div>
+                <div class="tittle-head">
+                    <h3 class="tittle">List Song of Album </h3>
+                    <div class="clearfix"> </div>
+                </div>
                 <div class="col-md-12 player" style="background: #777; width:100%;">
-                    <div class="audio-player" id="jquery_jplayer_1">
+                    <!-- <div class="audio-player" id="jquery_jplayer_1">
                         <audio id="audioPlayer"  controls autoplay>
-                            <source id="srcAudio" src="{{  $songs[0]->url }}" type="audio/mpeg"></source>
+                            <source src="" type="audio/mpeg"></source>
+
                         </audio>
-                    </div>
+                    </div> -->
                     <script type="text/javascript">
                         $(function(){
                             $('#audioPlayer').mediaelementplayer({
