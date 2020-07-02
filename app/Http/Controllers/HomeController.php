@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artists;
 use App\Models\Song;
 use Illuminate\Http\Request;
+use App\Models\Contact;
 use App\Repositories\Contracts\ArtistsInterface;
 use App\Repositories\Contracts\AlbumInterface;
 use App\Repositories\Contracts\SongInterface;
@@ -43,9 +44,20 @@ class HomeController extends Controller
         return view('web.index', compact('artistses','albums','songs'));
     }
     
-    public function contact() 
+    public function contact()
     {
         return view('web.contact');
+    }
+
+    public function contactSend(Request $request)
+    {
+        Contact::create([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'content' => $request->get('content'),
+        ]);
+
+        return back()->with('success', 'Thanks for contacting us!');
     }
 
     public function search(Request $request) 

@@ -3,9 +3,10 @@
     <div class="media-body">
         @foreach ($songs->comments as $comment)
         <div class="col-md-8">
-            <strong class="text-success">{{ $comment->users['name']}}</strong>
+            <img src="{{url('template_web/images/user.png')}}" class="img1" ><strong class="text-success">{{ $comment->users['name']}}</strong>
+            <p id="content-comment{{ $comment->id }}">{{ $comment->content }}</p>
             <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
-            <p id="content-comment{{ $comment->id }}">{{ $comment->content }}</p><hr>
+            <hr>
         </div>
         @endforeach
     </div>

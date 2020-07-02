@@ -4,30 +4,17 @@
             <ul class="rslides callbacks callbacks1" id="slider4">
                 <li>
                     <div class="banner-img">
-                        <img src="{{url('template_web/images/11.jpg')}}" class="img-responsive" alt="">
+                        <a href="{{url('song/21/show')}}"><img src="{{url('template_web/images/11.jpg')}}" class="img-responsive" alt=""></a>
                     </div>
-                    <div class="banner-info">
-                        <h3>Let Your Home</h3>
-                        <p>Album by <span>Rock star</span></p>
-                    </div>
-
                 </li>
                 <li>
                       <div class="banner-img">
-                          <img src="{{url('template_web/images/22.jpg')}}" class="img-responsive" alt="">
-                      </div>
-                      <div class="banner-info">
-                          <h3>Charis Brown feet</h3>
-                          <p>Album by <span>Rock star</span></p>
+                      <a href="{{url('song/3/show')}}"><img src="{{url('template_web/images/22.jpg')}}" class="img-responsive" alt=""></a>
                       </div>
                 </li>
                 <li>
                       <div class="banner-img">
-                          <img src="{{url('template_web/images/33.jpg')}}" class="img-responsive" alt="">
-                      </div>
-                      <div class="banner-info">
-                          <h3>Charis Brown feet</h3>
-                          <p>Album by <span>Rock star</span></p>
+                      <a href="{{url('song/19/show')}}"><img src="{{url('template_web/images/33.jpg')}}" class="img-responsive" alt=""></a>
                       </div>
                 </li>
             </ul>

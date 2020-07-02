@@ -1124,6 +1124,10 @@ img {
   vertical-align: middle;
   height: 150px;
 }
+.img1 {
+  vertical-align: middle;
+  height: 100%;
+}
 .img-responsive,
 .thumbnail > img,
 .thumbnail a > img,
