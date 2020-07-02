@@ -23,7 +23,7 @@ class AlbumController extends Controller
 
     public function index()
     {
-        $albums = $this->albumRepository->getAll();
+        $albums = $this->albumRepository->getAlbum()->paginate(config('setting.list_track'));
 
         return view('admin.album.index', compact('albums'));
     }

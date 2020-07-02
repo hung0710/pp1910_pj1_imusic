@@ -24,6 +24,8 @@ Route::group(['namespace' => 'Auth'], function () {
     Route::get('/logout', 'LogoutController@logout')->name('logout');
     Route::get('/changepassword', 'ChangePasswordController@index');
     Route::post('/changepassword', 'ChangePasswordController@ChangePassword')->name('changepassword');
+    Route::get('login/{provider}', 'LoginController@redirectToProvider');
+    Route::get('login/{provider}/callback', 'LoginController@handleProviderCallback');
 });
 
 Route::get('/', 'HomeController@index')->name('index');

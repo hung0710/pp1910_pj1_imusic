@@ -20,7 +20,7 @@ class ArtistsController extends Controller
 
     public function index()
     {
-        $artistses = $this->artistsRepository->getAll();
+        $artistses = $this->artistsRepository->getArtists()->paginate(config('setting.list_track'));
 
         return view('admin.artists.index', compact('artistses'));
     }

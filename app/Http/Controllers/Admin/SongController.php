@@ -32,7 +32,7 @@ class SongController extends Controller
 
     public function index()
     {
-        $songs = $this->songRepository->getAll();
+        $songs = $this->songRepository->getSong()->paginate(config('setting.list_track'));
 
         return view('admin.song.index', compact('songs'));
     }

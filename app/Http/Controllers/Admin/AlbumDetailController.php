@@ -29,7 +29,7 @@ class AlbumDetailController extends Controller
 
     public function index()
     {
-        $albumdetails = $this->albumDetailRepository->getAll();
+        $albumdetails = $this->albumDetailRepository->getAlbumDetail()->paginate(config('setting.list_per_page'));
         return view('admin.albumdetail.index', compact('albumdetails'));
     }
 

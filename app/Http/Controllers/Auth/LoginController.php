@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -58,6 +60,37 @@ class LoginController extends Controller
         }
 
         return view('auth.login');
+    }
+
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallback($provider)
+    {
+        $userSocial = Socialite::driver($provider)->stateless()->user();
+
+        $account = User::where('email', $userSocial->email)->first();
+        if ($account) {
+            Auth::login($account);
+
+            return redirect()->intended();
+        } else {
+            $user = new User;
+            $user->name = $userSocial->name;
+            $user->email = $userSocial->email;
+            $user->password = bcrypt(123456);
+            $user->save();
+            Auth::login($user);
+
+            return redirect()->to('/');
+        }
     }
 
 }

@@ -35,4 +35,6 @@
         </tbody>
     </table>
 </div>
+
+{!! $albums->render() !!}
 @endsection

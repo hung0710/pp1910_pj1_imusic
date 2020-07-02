@@ -32,5 +32,6 @@
             @endforeach
         </tbody>
     </table>
+    {!! $albumdetails->render() !!}
 </div>
 @endsection

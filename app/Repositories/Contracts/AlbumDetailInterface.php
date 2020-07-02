@@ -6,6 +6,7 @@ use App\Repositories\Contracts\RepositoryInterface;
 
 Interface AlbumDetailInterface extends RepositoryInterface
 {
+    public function getAlbumDetail();
     //
 }
 

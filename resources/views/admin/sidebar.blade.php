@@ -28,12 +28,6 @@
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#"  >
-  <i class="fas fa-fw fa-users"></i>
-    <span> Thành viên </span>
-  </a>
-</li>
-<li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-list"></i>
     <span>Danh Mục</span>

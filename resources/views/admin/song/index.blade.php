@@ -39,5 +39,6 @@
             @endforeach
         </tbody>
     </table>
+    {!! $songs->render() !!}
 </div>
 @endsection

@@ -42,7 +42,7 @@ class UserController extends Controller
         $data = $request->all();
         $this->userRepository->create($data);
 
-        return redirect()->back();
+        return redirect('/admin/users')->with("success");
     }
 
     /**
@@ -76,12 +76,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserFormRequest $id, $request)
+    public function update(UserFormRequest $request, $id)
     {
         $data = $request->all();
         $this->userRepository->update($id, $data);
 
-        return redirect()->route('admin.users.index');
+        return redirect('/admin/users')->with('Update successful');
     }
 
     /**

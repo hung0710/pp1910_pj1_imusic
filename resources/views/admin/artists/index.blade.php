@@ -34,4 +34,6 @@
         </tbody>
     </table>
 </div>
+
+{!! $artistses->render() !!}
 @endsection
