@@ -10,6 +10,7 @@
         @endforeach
     </div>
     <!--//music-right-->
+    @if (Auth::check())
     <div class="coment-form">
         <h4>{{__('Leave your comment')}}</h4>
         <form action="{{route('comments')}}" id="comment" method="post">
@@ -19,6 +20,11 @@
             <input type="submit" id="submit" value="Submit">
         </form>
     </div>
+    @else 
+        <div class="comment">
+            <a href="{{route('login')}}"><span> Login to comments</span></a>
+        </div>
+    @endif
 </div>
 <div class="clearfix"> </div>
     <meta name="csrf-token" content="{{ csrf_token() }}">
